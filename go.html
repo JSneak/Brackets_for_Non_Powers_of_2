@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tournament</title>
+<meta name="description" content="A tournament or bracket diagram, with automatic promotion as results are entered interactively." />
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.7.12/go.js"></script>
+</head>
+<body>
+<div id="sample">
+  <div id="myDiagramDiv" style="border: solid 1px black; background: #4D4D4D; width:1500px; height:1000px"></div>
+</div>
+<script src="scripts/tournament.js"></script>
+<script src="scripts/binary.js"></script>
+<script>
+  var playerList = [
+              'Adler'
+             ,'Pollock'
+             ,'Montgomery'
+             ,'Lestrade'
+             ,'Wilson'
+             ,"Sean"
+             ,"David"
+             ,"Thoreau"
+             ,"Heliker"
+             ,"David"
+             ,"Ben"
+             ,"qwe"
+             ,"asde"
+             ,"asdqwd"
+             ,"mbn"
+             ,"qdwdd"
+             ,"asde"
+             ,"asdqwd"
+             ,"mbn"
+             ,"qdwdd"
+             ,"mbn"
+             ,"qdwdd"
+             ,"mbn"
+             ,"qdwdd"
+             // ,"mbn"
+             // ,"qdwdd"
+             // ,"mbn"
+             // ,"qdwdd"
+             // ,"mbn"
+             // ,"qdwdd"
+             // ,"mbn"
+             // ,"qdwdd"
+             // ,"mbn"
+             //,"qdwdd"
+             // ,"mbn"
+             //  ,"qdwdd"
+             //  ,"mbn"
+             //  ,"qdwdd"
+             //  ,"mbn"
+             // ,"qdwdd"
+             ]
+  
+  function makeModel(players) {
+    var model = new go.TreeModel(players.nodeDataArray);
+    checkWinner(model)
+    myDiagram.model = model;
+  }
+  createArrayWithEmptyAndNodes(playerList)
+  console.log(playerList.length)
+</script>
+</body>
+</html>
