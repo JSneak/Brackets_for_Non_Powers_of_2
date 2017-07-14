@@ -18,18 +18,13 @@ var dataT = {
 var createArrayWithEmptyAndNodes = function(list) {
     numPlayer = list.length;//Length of people 
     var exponent = -1;//Exponent
-    var m = 0; // # of nodes
+    var m = (2 * (numPlayer - Math.pow(2, exponent))) - numPlayer; // # of nodes
     var nodeList = [];
-    for(var i = exponent;i>=0;i--) {
-        m += Math.pow(2,i);
-        console.log("asd")
-    }
-    m += (2 * (numPlayer - Math.pow(2, exponent)));
-    for(var b = m-numPlayer;b>0;b--) {
+    for(var x = m; x > 0; x--) {
         nodeList.push(new Node(""))
     }
 
-    for(var c = 0;c<list.length;c++) {
+    for(var c = 0;c<numPlayer;c++) {
         nodeList.push(new Node(list[c]))
     }
     makeTree(nodeList)
