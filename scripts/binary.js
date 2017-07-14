@@ -85,7 +85,7 @@ function makeJSON(list){
     var x = 0;
     for(var i = 0;i<list.length;i++)
     {
-        var temp = {
+        var goJsFormat = {
           "key": list[i].col + "-" + list[i].row,
           "parent": (list[i].col - 1) + "-" + list[i].pv,
           "parentNumber": x,
@@ -94,14 +94,14 @@ function makeJSON(list){
         };
         if(list[i].left == "")
         {
-          temp.player1 = list[i].right;
-          temp.player2 = list[i].left;
+          goJsFormat.player1 = list[i].right;
+          goJsFormat.player2 = list[i].left;
         }else{
-          temp.player1 = list[i].left,
-          temp.player2 = list[i].right
+          goJsFormat.player1 = list[i].left,
+          goJsFormat.player2 = list[i].right
         }
 
-        dataT.nodeDataArray.push(temp)
+        dataT.nodeDataArray.push(goJsFormat)
         if(x == 0){
             x = 1;
         }else{
