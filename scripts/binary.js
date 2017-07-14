@@ -20,11 +20,6 @@ var createArrayWithEmptyAndNodes = function(list) {
     var exponent = -1;//Exponent
     var m = 0; // # of nodes
     var nodeList = [];
-    var temp = 1;
-    while(temp < length) {
-        temp *= 2;
-        exponent++;
-    }
     for(var i = exponent;i>=0;i--) {
         m += Math.pow(2,i);
     }
