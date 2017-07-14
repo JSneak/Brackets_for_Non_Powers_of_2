@@ -43,8 +43,7 @@ var makeTree = function(list) {
 
     for(var i = 0; i <newBinaryTree.length;i++)
     {
-        var temp = newBinaryTree[i]
-        temp.col = Math.floor(Math.log2(i+1));
+        newBinaryTree[i].col = Math.floor(Math.log2(i+1));
         maxCol = Math.floor(Math.log2(i+1));
     }
     var currentCol = 0;
