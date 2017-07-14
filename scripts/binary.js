@@ -22,6 +22,7 @@ var createArrayWithEmptyAndNodes = function(list) {
     var nodeList = [];
     for(var i = exponent;i>=0;i--) {
         m += Math.pow(2,i);
+        console.log("asd")
     }
     m += (2 * (numPlayer - Math.pow(2, exponent)));
     for(var b = m-numPlayer;b>0;b--) {
@@ -81,7 +82,7 @@ var makeTree = function(list) {
     prepareJSONForGoJS(newBinaryTree)
 }
 
-function makeJSON(list){
+function prepareJSONForGoJS(list){
     var x = 0;
     for(var i = 0;i<list.length;i++)
     {
