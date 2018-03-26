@@ -1,31 +1,32 @@
 // BINARY TREE CODE
 var Node = function(name) {
-    this.name = name;
+    this.name = name; //Name from player list
     this.left = null;
     this.right = null;
-    this.col = null;
-    this.row = null;
-    this.pv = null;
+    this.col = null; // The column
+    this.row = null; // The row this node is contained in
+    this.pv = null; //Parent Node
 };
 
-var numPlayer;
 var dataT = {
     "class": "go.TreeModel",
     "nodeDataArray": [
     ]
 }
 
+var numPlayer
+
 var createArrayWithEmptyAndNodes = function(list) {
-    numPlayer = list.length;//Length of people 
+    numPlayer = list.length;//Length of people
     var exponent = -1;//Exponent
-    var m = (2 * (numPlayer - Math.pow(2, exponent))) - numPlayer; // # of nodes
+    var numberOfNodes = (2 * (numPlayer - Math.pow(2, exponent))) - numPlayer; // # of nodes
     var nodeList = [];
-    for(var x = m; x > 0; x--) {
+    for(var x = numberOfNodes; x > 0; x--) {
         nodeList.push(new Node(""))
     }
 
-    for(var c = 0;c<numPlayer;c++) {
-        nodeList.push(new Node(list[c]))
+    for(var x = 0;x<numPlayer;x++) {
+        nodeList.push(new Node(list[x]))
     }
     makeTree(nodeList)
 }
@@ -104,4 +105,10 @@ function prepareJSONForGoJS(list){
         }
     }
     makeModel(dataT);
+    //Resets dataT for player change
+    dataT = {
+        "class": "go.TreeModel",
+        "nodeDataArray": [
+        ]
+    }
 }

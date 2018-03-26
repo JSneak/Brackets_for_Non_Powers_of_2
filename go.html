@@ -9,11 +9,16 @@
 </head>
 <body>
 <div id="sample">
-  <div id="myDiagramDiv" style="border: solid 1px black; background: #4D4D4D; width:100%; height:100vh"></div>
+  <div id="myDiagramDiv" style="border: solid 1px black; background: #4D4D4D; width:90%; height:70vh"></div>
+</div>
+<div>
+  <input type="number" value="17" id="players" min="3" max="30">
+  <input type="button" value="Change number of participants" onClick="createArrayWithEmptyAndNodes(numberOfPlayers());">
 </div>
 <script src="scripts/tournament.js"></script>
 <script src="scripts/binary.js"></script>
 <script>
+  //List of names to be used in bracket generation
   var playerList = [
         'Adler'
         ,'Pollock'
@@ -24,7 +29,7 @@
         ,"David"
         ,"Thoreau"
         ,"Heliker"
-        ,"David"
+        ,"David the Second"
         ,"Ben"
         ,"Corrin Haapala"
         ,"Woodrow Gressett"
@@ -46,15 +51,38 @@
         ,"Chadwick Mendonca"  
         ,"Eleni Arrington"  
         ,"Wilber Tollett"
+        , "Quinn"
+        , "Zoey"
+        , "Arden"
+        , "Sean"
+        , "Mei"
+        , "Sam"
+        , "Mercy"
+        , "Reaper"
+        , "Pollock"
+        , "Jimmy"
+        , "Cameron"
+        , "Grant"
+        , "Jack"
     ]
-  
+
   function makeModel(players) {
     var model = new go.TreeModel(players.nodeDataArray);
     checkWinner(model)
     myDiagram.model = model;
   }
-  createArrayWithEmptyAndNodes(playerList)
-  console.log(playerList.length)
+
+  // Used to change number of players
+  function numberOfPlayers() {
+    let total = []; //Names Array
+    for(i=0;i< parseInt(players.value); i++) {
+      total.push(playerList[i]);
+    }
+    return total;
+  }
+  //Initialize the process
+  createArrayWithEmptyAndNodes(numberOfPlayers());
+
 </script>
 </body>
 </html>
