@@ -1,6 +1,6 @@
 # Brackets_for_Non_Powers_of_2
 
-View a live demo **[here](http://seankim.tech/tournament/demo)**
+View a live demo **[here](http://sean.kim/brackets/go.html)**
 
 ---
 
